@@ -13,8 +13,7 @@ public class ButtonMode : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		MindWave.Init();  // init for mind control
-		
+	
 	}
 	
 	// Update is called once per frame
@@ -43,15 +42,21 @@ public class ButtonMode : MonoBehaviour {
 	{
 		switch(num)
 		{
-			case 0: // voice
-				MindWave.StopListening();
-				break;
-			case 1: // face
-				MindWave.StopListening();
-				break;
-			case 2: //mind
-				MindWave.StartListening();
-				break;
+		case 0: // voice
+//			OpenEars.StartListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StopDetect();
+		
+			break;
+		case 1: // face
+//			OpenEars.StopListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StartDetect();
+		
+			break;
+		case 2: //mind
+//			OpenEars.StopListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StopDetect();
+
+			break;
 		}
 	}
 	
