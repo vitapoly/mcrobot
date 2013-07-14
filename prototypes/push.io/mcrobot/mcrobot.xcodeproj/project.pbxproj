@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3A222F017920B96007AC2BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A222EF17920B96007AC2BE /* UIKit.framework */; };
+		B3A222F217920B96007AC2BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A222F117920B96007AC2BE /* Foundation.framework */; };
+		B3A222F417920B96007AC2BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A222F317920B96007AC2BE /* CoreGraphics.framework */; };
+		B3A222FA17920B96007AC2BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A222F817920B96007AC2BE /* InfoPlist.strings */; };
+		B3A222FC17920B96007AC2BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A222FB17920B96007AC2BE /* main.m */; };
+		B3A2230017920B96007AC2BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A222FF17920B96007AC2BE /* AppDelegate.m */; };
+		B3A2230217920B96007AC2BE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A2230117920B96007AC2BE /* Default.png */; };
+		B3A2230417920B96007AC2BE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A2230317920B96007AC2BE /* Default@2x.png */; };
+		B3A2230617920B96007AC2BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A2230517920B96007AC2BE /* Default-568h@2x.png */; };
+		B3A2230917920B96007AC2BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A2230817920B96007AC2BE /* ViewController.m */; };
+		B3A2230C17920B96007AC2BE /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A2230A17920B96007AC2BE /* ViewController_iPhone.xib */; };
+		B3A2230F17920B96007AC2BE /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A2230D17920B96007AC2BE /* ViewController_iPad.xib */; };
+		B3A2233D17920BFA007AC2BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B3A2231617920BFA007AC2BE /* .gitignore */; };
+		B3A2233E17920BFA007AC2BE /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = B3A2231717920BFA007AC2BE /* ChangeLog */; };
+		B3A2233F17920BFA007AC2BE /* PushIOManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2231817920BFA007AC2BE /* PushIOManager.framework */; };
+		B3A2235517920BFB007AC2BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B3A2233C17920BFA007AC2BE /* README.md */; };
+		B3A2235D17920C25007AC2BE /* pushio_config_debug.json in Resources */ = {isa = PBXBuildFile; fileRef = B3A2235C17920C25007AC2BE /* pushio_config_debug.json */; };
+		B3A2235F17920C50007AC2BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A2235E17920C50007AC2BE /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B3A222EC17920B96007AC2BE /* mcrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A222EF17920B96007AC2BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3A222F117920B96007AC2BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3A222F317920B96007AC2BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3A222F717920B96007AC2BE /* mcrobot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mcrobot-Info.plist"; sourceTree = "<group>"; };
+		B3A222F917920B96007AC2BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3A222FB17920B96007AC2BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3A222FD17920B96007AC2BE /* mcrobot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mcrobot-Prefix.pch"; sourceTree = "<group>"; };
+		B3A222FE17920B96007AC2BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3A222FF17920B96007AC2BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3A2230117920B96007AC2BE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B3A2230317920B96007AC2BE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B3A2230517920B96007AC2BE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B3A2230717920B96007AC2BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B3A2230817920B96007AC2BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B3A2230B17920B96007AC2BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		B3A2230E17920B96007AC2BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		B3A2231617920BFA007AC2BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B3A2231717920BFA007AC2BE /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		B3A2231817920BFA007AC2BE /* PushIOManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushIOManager.framework; sourceTree = "<group>"; };
+		B3A2233C17920BFA007AC2BE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		B3A2235C17920C25007AC2BE /* pushio_config_debug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pushio_config_debug.json; sourceTree = "<group>"; };
+		B3A2235E17920C50007AC2BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3A222E917920B96007AC2BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A2235F17920C50007AC2BE /* CoreLocation.framework in Frameworks */,
+				B3A222F017920B96007AC2BE /* UIKit.framework in Frameworks */,
+				B3A222F217920B96007AC2BE /* Foundation.framework in Frameworks */,
+				B3A222F417920B96007AC2BE /* CoreGraphics.framework in Frameworks */,
+				B3A2233F17920BFA007AC2BE /* PushIOManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3A222E317920B96007AC2BE = {
+			isa = PBXGroup;
+			children = (
+				B3A2235E17920C50007AC2BE /* CoreLocation.framework */,
+				B3A2231517920BFA007AC2BE /* PushIOManager_iOS */,
+				B3A222F517920B96007AC2BE /* mcrobot */,
+				B3A222EE17920B96007AC2BE /* Frameworks */,
+				B3A222ED17920B96007AC2BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3A222ED17920B96007AC2BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3A222EC17920B96007AC2BE /* mcrobot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3A222EE17920B96007AC2BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3A222EF17920B96007AC2BE /* UIKit.framework */,
+				B3A222F117920B96007AC2BE /* Foundation.framework */,
+				B3A222F317920B96007AC2BE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3A222F517920B96007AC2BE /* mcrobot */ = {
+			isa = PBXGroup;
+			children = (
+				B3A222FE17920B96007AC2BE /* AppDelegate.h */,
+				B3A222FF17920B96007AC2BE /* AppDelegate.m */,
+				B3A2230717920B96007AC2BE /* ViewController.h */,
+				B3A2230817920B96007AC2BE /* ViewController.m */,
+				B3A2230A17920B96007AC2BE /* ViewController_iPhone.xib */,
+				B3A2230D17920B96007AC2BE /* ViewController_iPad.xib */,
+				B3A222F617920B96007AC2BE /* Supporting Files */,
+			);
+			path = mcrobot;
+			sourceTree = "<group>";
+		};
+		B3A222F617920B96007AC2BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2235C17920C25007AC2BE /* pushio_config_debug.json */,
+				B3A222F717920B96007AC2BE /* mcrobot-Info.plist */,
+				B3A222F817920B96007AC2BE /* InfoPlist.strings */,
+				B3A222FB17920B96007AC2BE /* main.m */,
+				B3A222FD17920B96007AC2BE /* mcrobot-Prefix.pch */,
+				B3A2230117920B96007AC2BE /* Default.png */,
+				B3A2230317920B96007AC2BE /* Default@2x.png */,
+				B3A2230517920B96007AC2BE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3A2231517920BFA007AC2BE /* PushIOManager_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B3A2231617920BFA007AC2BE /* .gitignore */,
+				B3A2231717920BFA007AC2BE /* ChangeLog */,
+				B3A2231817920BFA007AC2BE /* PushIOManager.framework */,
+				B3A2233C17920BFA007AC2BE /* README.md */,
+			);
+			path = PushIOManager_iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3A222EB17920B96007AC2BE /* mcrobot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3A2231217920B96007AC2BE /* Build configuration list for PBXNativeTarget "mcrobot" */;
+			buildPhases = (
+				B3A222E817920B96007AC2BE /* Sources */,
+				B3A222E917920B96007AC2BE /* Frameworks */,
+				B3A222EA17920B96007AC2BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mcrobot;
+			productName = mcrobot;
+			productReference = B3A222EC17920B96007AC2BE /* mcrobot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3A222E417920B96007AC2BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = iosdevcamp;
+			};
+			buildConfigurationList = B3A222E717920B96007AC2BE /* Build configuration list for PBXProject "mcrobot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B3A222E317920B96007AC2BE;
+			productRefGroup = B3A222ED17920B96007AC2BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3A222EB17920B96007AC2BE /* mcrobot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3A222EA17920B96007AC2BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A222FA17920B96007AC2BE /* InfoPlist.strings in Resources */,
+				B3A2230217920B96007AC2BE /* Default.png in Resources */,
+				B3A2230417920B96007AC2BE /* Default@2x.png in Resources */,
+				B3A2230617920B96007AC2BE /* Default-568h@2x.png in Resources */,
+				B3A2230C17920B96007AC2BE /* ViewController_iPhone.xib in Resources */,
+				B3A2230F17920B96007AC2BE /* ViewController_iPad.xib in Resources */,
+				B3A2233D17920BFA007AC2BE /* .gitignore in Resources */,
+				B3A2233E17920BFA007AC2BE /* ChangeLog in Resources */,
+				B3A2235517920BFB007AC2BE /* README.md in Resources */,
+				B3A2235D17920C25007AC2BE /* pushio_config_debug.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3A222E817920B96007AC2BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3A222FC17920B96007AC2BE /* main.m in Sources */,
+				B3A2230017920B96007AC2BE /* AppDelegate.m in Sources */,
+				B3A2230917920B96007AC2BE /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B3A222F817920B96007AC2BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3A222F917920B96007AC2BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3A2230A17920B96007AC2BE /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3A2230B17920B96007AC2BE /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B3A2230D17920B96007AC2BE /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3A2230E17920B96007AC2BE /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3A2231017920B96007AC2BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jun Rong Chen (3FA574T6F9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jun Rong Chen (3FA574T6F9)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "9A1429AB-E46E-4A91-ACB0-73DED4E61737";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9A1429AB-E46E-4A91-ACB0-73DED4E61737";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3A2231117920B96007AC2BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jun Rong Chen (3FA574T6F9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jun Rong Chen (3FA574T6F9)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "9A1429AB-E46E-4A91-ACB0-73DED4E61737";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9A1429AB-E46E-4A91-ACB0-73DED4E61737";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3A2231317920B96007AC2BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PushIOManager_iOS\"",
+					"\"$(SRCROOT)/PushIOManager_iOS/PushIONewsSampleApplicaton\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mcrobot/mcrobot-Prefix.pch";
+				INFOPLIST_FILE = "mcrobot/mcrobot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B3A2231417920B96007AC2BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PushIOManager_iOS\"",
+					"\"$(SRCROOT)/PushIOManager_iOS/PushIONewsSampleApplicaton\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mcrobot/mcrobot-Prefix.pch";
+				INFOPLIST_FILE = "mcrobot/mcrobot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3A222E717920B96007AC2BE /* Build configuration list for PBXProject "mcrobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A2231017920B96007AC2BE /* Debug */,
+				B3A2231117920B96007AC2BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3A2231217920B96007AC2BE /* Build configuration list for PBXNativeTarget "mcrobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A2231317920B96007AC2BE /* Debug */,
+				B3A2231417920B96007AC2BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3A222E417920B96007AC2BE /* Project object */;
+}
