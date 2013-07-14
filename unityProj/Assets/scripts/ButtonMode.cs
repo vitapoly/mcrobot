@@ -13,7 +13,8 @@ public class ButtonMode : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-	
+		MindWave.Init();  // init for mind control
+		
 	}
 	
 	// Update is called once per frame
@@ -43,13 +44,13 @@ public class ButtonMode : MonoBehaviour {
 		switch(num)
 		{
 			case 0: // voice
-			
+				MindWave.StopListening();
 				break;
 			case 1: // face
-			
+				MindWave.StopListening();
 				break;
 			case 2: //mind
-			
+				MindWave.StartListening();
 				break;
 		}
 	}

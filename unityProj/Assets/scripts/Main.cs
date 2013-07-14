@@ -17,6 +17,32 @@ public class Main : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		MindWave.Sensed += delegate(object sender, MindWaveSensedEventArgs e) {
+			switch(e.Phrase)
+			{
+			case "LEFT":
+				rotateArmToLeft();
+				break;
+			case "RIGHT":
+				rotateArmToRight();
+				break;
+			case "OPEN":
+				openHand();
+				break;
+			case "CLOSE":
+				closeHand();
+				break;
+			case "SET_LEFT":
+				break;
+			case "SET_RIGHT":
+				break;
+			case "SET_OPEN":
+				break;
+			case "SET_CLOSE":
+				break;
+			}
+		};
+		MindWave.StartListening();
 		//openHand();
 		//rotateArmToLeft();
 		//rotateArmToRight();
