@@ -42,15 +42,21 @@ public class ButtonMode : MonoBehaviour {
 	{
 		switch(num)
 		{
-			case 0: // voice
-			
-				break;
-			case 1: // face
-			
-				break;
-			case 2: //mind
-			
-				break;
+		case 0: // voice
+//			OpenEars.StartListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StopDetect();
+		
+			break;
+		case 1: // face
+//			OpenEars.StopListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StartDetect();
+		
+			break;
+		case 2: //mind
+//			OpenEars.StopListening();
+//			GameObject.Find("FaceDetect").GetComponent<WebCamFaceDetector>().StopDetect();
+
+			break;
 		}
 	}
 	

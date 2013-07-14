@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using U3DXT.Core;
 
 public class Main : MonoBehaviour {
 
@@ -22,6 +23,35 @@ public class Main : MonoBehaviour {
 		//rotateArmToRight();
 		//rotateArmToUp();
 		//rotateArmToDown();
+		
+		if (CoreXT.IsDevice) {
+			OpenEars.Heard += delegate(object sender, OpenEarsHeardEventArgs e) {
+				Log("Heard: " + e.Phrase);
+				
+				switch (e.Phrase) {
+				case "LEFT":
+					rotateArmToLeft();
+					break;
+				case "RIGHT":
+					rotateArmToRight();
+					break;
+				case "OPEN":
+					openHand();
+					break;
+				case "CLOSE":
+					closeHand();
+					break;
+				}
+			};
+
+			OpenEars.Init(new string[] {"LEFT", "RIGHT", "OPEN", "CLOSE"});
+			OpenEars.StartListening();
+		}
+	}
+	
+	void OnGUI() {
+				
+		OnGUILog();
 	}
 	
 	// Update is called once per frame
@@ -89,23 +119,24 @@ public class Main : MonoBehaviour {
 		}
 		*/
 		
-		
-		
+
 	}
 	
-	void rotateArmLeftRightBy(int number)
+	public void rotateArmLeftRightBy(int number)
 	{
 		GameObject.FindWithTag("Player").transform.Rotate(new Vector3(0, number, 0));
 	}
 	
-	void rotateArmUpDownBy(int number)
+	public void rotateArmUpDownBy(int number)
 	{
 		GameObject.FindWithTag("Player").transform.Rotate(new Vector3(number, 0, 0));
 	}
 	
 	//trigger control functions for voice or mind
-	void rotateArmToLeft()
+	public void rotateArmToLeft()
 	{
+		Log("rotate left");
+		
 		turnOfAllBooleans();
 		isGoingLeft = true;
 		
@@ -124,8 +155,10 @@ public class Main : MonoBehaviour {
 		}
 	}
 	
-	void rotateArmToRight()
+	public void rotateArmToRight()
 	{
+		Log("rotate right");
+
 		turnOfAllBooleans();
 		isGoingRight = true;
 		var greenArrow = GameObject.FindWithTag("greenArrow");
@@ -181,5 +214,22 @@ public class Main : MonoBehaviour {
 		isGoingDown = false;
 	}
 	
+	string _log = "Debug log:";
+	Vector2 _scrollPosition = Vector2.zero;
 	
+	void OnGUILog() {
+		GUILayout.BeginArea(new Rect(50, Screen.height - 200, Screen.width - 100, 200));
+		_scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
+		GUI.skin.box.wordWrap = true;
+		GUI.skin.box.alignment = TextAnchor.UpperLeft;
+		GUILayout.Box(_log, GUILayout.ExpandHeight(true));
+		GUILayout.EndScrollView();
+		GUILayout.EndArea();
+	}
+	
+	void Log(string str) {
+		_log += "\n" + str;
+		_scrollPosition.y = Mathf.Infinity;
+		Debug.Log(str);
+	}
 }
