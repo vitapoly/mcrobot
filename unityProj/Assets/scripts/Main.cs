@@ -13,13 +13,14 @@ public class Main : MonoBehaviour {
 	bool isGoingRight = false;
 	bool isGoingUp = false;
 	bool isGoingDown = false;
+	bool isOpen = false;
 	
 	
 	// Use this for initialization
 	void Start () 
 	{
 		//openHand();
-		//rotateArmToLeft();
+//		rotateArmToLeft();
 		//rotateArmToRight();
 		//rotateArmToUp();
 		//rotateArmToDown();
@@ -140,19 +141,19 @@ public class Main : MonoBehaviour {
 		turnOfAllBooleans();
 		isGoingLeft = true;
 		
-		var greenArrow = GameObject.FindWithTag("greenArrow");
-		if(greenArrow.transform.localPosition.y  == -65)
-		{
-			//do nothing
-		}
-		if(greenArrow.transform.localPosition.y  == -80)
-		{
-			greenArrow.transform.Translate(0, 15, 0); //moves up
-		}
-		if(greenArrow.transform.localPosition.y  == -95)
-		{
-			greenArrow.transform.Translate(0, 30, 0); //moves up
-		}
+//		var greenArrow = GameObject.FindWithTag("greenArrow");
+//		if(greenArrow.transform.localPosition.y  == -65)
+//		{
+//			//do nothing
+//		}
+//		if(greenArrow.transform.localPosition.y  == -80)
+//		{
+//			greenArrow.transform.Translate(0, 15, 0); //moves up
+//		}
+//		if(greenArrow.transform.localPosition.y  == -95)
+//		{
+//			greenArrow.transform.Translate(0, 30, 0); //moves up
+//		}
 	}
 	
 	public void rotateArmToRight()
@@ -161,35 +162,43 @@ public class Main : MonoBehaviour {
 
 		turnOfAllBooleans();
 		isGoingRight = true;
-		var greenArrow = GameObject.FindWithTag("greenArrow");
-		
-		if(greenArrow.transform.localPosition.y == -65)
-		{
-			greenArrow.transform.Translate(0, -15, 0); //moves up
-		}
-		if(greenArrow.transform.localPosition.y == -80)
-		{
-			//do nothing
-		}
-		if(greenArrow.transform.localPosition.y  == -95)
-		{
-			greenArrow.transform.Translate(0, 15, 0); //moves up
-		}
-		
+//		var greenArrow = GameObject.FindWithTag("greenArrow");
+//		
+//		if(greenArrow.transform.localPosition.y == -65)
+//		{
+//			greenArrow.transform.Translate(0, -15, 0); //moves up
+//		}
+//		if(greenArrow.transform.localPosition.y == -80)
+//		{
+//			//do nothing
+//		}
+//		if(greenArrow.transform.localPosition.y  == -95)
+//		{
+//			greenArrow.transform.Translate(0, 15, 0); //moves up
+//		}
+//		
 	}
 	
 	void openHand()
 	{
 		//Debug.Log("open hand");
-		GameObject.FindWithTag("clawLeft").transform.Rotate(new Vector3(0, -40, 0));
-		GameObject.FindWithTag("clawRight").transform.Rotate(new Vector3(0, 40, 0));
+		var clawLeft = GameObject.FindWithTag("clawLeft");
+		var clawRight = GameObject.FindWithTag("clawRight");
+		if (!isOpen) {
+			clawLeft.transform.Rotate(new Vector3(0, -40, 0));
+			clawRight.transform.Rotate(new Vector3(0, 40, 0));
+		}
 	}
 	
 	
 	void closeHand()
 	{
-		GameObject.FindWithTag("clawLeft").transform.Rotate(new Vector3(0, 40, 0));
-		GameObject.FindWithTag("clawRight").transform.Rotate(new Vector3(0, -40, 0));
+		var clawLeft = GameObject.FindWithTag("clawLeft");
+		var clawRight = GameObject.FindWithTag("clawRight");
+		if (isOpen) {
+			clawLeft.transform.Rotate(new Vector3(0, 40, 0));
+			clawRight.transform.Rotate(new Vector3(0, -40, 0));
+		}
 	
 	}
 	
@@ -230,6 +239,6 @@ public class Main : MonoBehaviour {
 	void Log(string str) {
 		_log += "\n" + str;
 		_scrollPosition.y = Mathf.Infinity;
-		Debug.Log(str);
+//		Debug.Log(str);
 	}
 }
