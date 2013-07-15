@@ -29,24 +29,52 @@ public class Main : MonoBehaviour {
 			OpenEars.Heard += delegate(object sender, OpenEarsHeardEventArgs e) {
 				Log("Heard: " + e.Phrase);
 				
-				switch (e.Phrase) {
-				case "LEFT":
-					rotateArmToLeft();
-					break;
-				case "RIGHT":
-					rotateArmToRight();
-					break;
-				case "OPEN":
-					openHand();
-					break;
-				case "CLOSE":
-					closeHand();
-					break;
-				}
+				OnCommand(e.Phrase);
 			};
 
-			OpenEars.Init(new string[] {"LEFT", "RIGHT", "OPEN", "CLOSE"});
+			OpenEars.Init(new string[] {"LEFT", "RIGHT", "OPEN", "CLOSE", "CENTER"});
 			OpenEars.StartListening();
+			Log("Open Ears initialized.");
+			
+			
+			MindWave.Sensed += delegate(object sender, MindWaveSensedEventArgs e) {
+				Log("Sensed: " + e.Phrase);
+				
+				OnCommand(e.Phrase);
+			};
+			MindWave.Init();  // init for mind control
+			MindWave.StartListening();
+			Log("MindWave initialized.");
+			
+			Log("Screen size: " + Screen.width + "x" + Screen.height);
+		}
+	}
+	
+	void OnCommand(string cmd) {
+		switch(cmd) {
+		case "LEFT":
+			rotateArmToLeft();
+			break;
+		case "RIGHT":
+			rotateArmToRight();
+			break;
+		case "OPEN":
+			openHand();
+			break;
+		case "CLOSE":
+			closeHand();
+			break;
+		case "SET_LEFT":
+			break;
+		case "SET_RIGHT":
+			break;
+		case "SET_OPEN":
+			break;
+		case "SET_CLOSE":
+			break;
+		case "CENTER":
+			GameObject.Find("Main Camera").camera.transform.position = new Vector3(0, 225, 50);
+			break;
 		}
 	}
 	
@@ -65,7 +93,7 @@ public class Main : MonoBehaviour {
 		{
 			if(	arm.transform.rotation.y > leftRotationLimit)
 			{
-				rotateArmLeftRightBy(-1);
+				rotateArmLeftRightBy(-2);
 			}
 			else
 			{
@@ -79,7 +107,7 @@ public class Main : MonoBehaviour {
 		{
 			if(	arm.transform.rotation.y < rightRotationLimit)
 			{
-				rotateArmLeftRightBy(1);
+				rotateArmLeftRightBy(2);
 			}
 			else
 			{
@@ -137,9 +165,13 @@ public class Main : MonoBehaviour {
 	public void rotateArmToLeft()
 	{
 		Log("rotate left");
+//		OpenEars.Speak ("Rotating left.");
 		
 		turnOfAllBooleans();
 		isGoingLeft = true;
+		
+		var www = new WWW("http://apps.vitapoly.com/apps/mcrobot/post.php?cmd=left");
+
 		
 //		var greenArrow = GameObject.FindWithTag("greenArrow");
 //		if(greenArrow.transform.localPosition.y  == -65)
@@ -159,9 +191,13 @@ public class Main : MonoBehaviour {
 	public void rotateArmToRight()
 	{
 		Log("rotate right");
+//		OpenEars.Speak ("Rotating right.");
 
 		turnOfAllBooleans();
 		isGoingRight = true;
+		
+		var www = new WWW("http://apps.vitapoly.com/apps/mcrobot/post.php?cmd=right");
+		
 //		var greenArrow = GameObject.FindWithTag("greenArrow");
 //		
 //		if(greenArrow.transform.localPosition.y == -65)
@@ -185,8 +221,13 @@ public class Main : MonoBehaviour {
 		var clawLeft = GameObject.FindWithTag("clawLeft");
 		var clawRight = GameObject.FindWithTag("clawRight");
 		if (!isOpen) {
+			OpenEars.Speak ("Opening claw.");
 			clawLeft.transform.Rotate(new Vector3(0, -40, 0));
 			clawRight.transform.Rotate(new Vector3(0, 40, 0));
+			
+			var www = new WWW("http://apps.vitapoly.com/apps/mcrobot/post.php?cmd=open");
+
+			isOpen = true;
 		}
 	}
 	
@@ -196,8 +237,13 @@ public class Main : MonoBehaviour {
 		var clawLeft = GameObject.FindWithTag("clawLeft");
 		var clawRight = GameObject.FindWithTag("clawRight");
 		if (isOpen) {
+			OpenEars.Speak ("OK, don't crush me.");
 			clawLeft.transform.Rotate(new Vector3(0, 40, 0));
 			clawRight.transform.Rotate(new Vector3(0, -40, 0));
+			
+			var www = new WWW("http://apps.vitapoly.com/apps/mcrobot/post.php?cmd=close");
+
+			isOpen = false;
 		}
 	
 	}
@@ -231,12 +277,13 @@ public class Main : MonoBehaviour {
 		_scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
 		GUI.skin.box.wordWrap = true;
 		GUI.skin.box.alignment = TextAnchor.UpperLeft;
+		GUI.skin.box.fontSize = 40;
 		GUILayout.Box(_log, GUILayout.ExpandHeight(true));
 		GUILayout.EndScrollView();
 		GUILayout.EndArea();
 	}
 	
-	void Log(string str) {
+	public void Log(string str) {
 		_log += "\n" + str;
 		_scrollPosition.y = Mathf.Infinity;
 //		Debug.Log(str);

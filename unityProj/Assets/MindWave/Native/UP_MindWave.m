@@ -22,7 +22,7 @@
     if([data valueForKey:@"blinkStrength"])
     {
         blinkStrength = [[data valueForKey:@"blinkStrength"] intValue];
-        if ((blinkStrength != lastBlinkValue) && (blinkStrength > 90))
+        if ((blinkStrength != lastBlinkValue) && (blinkStrength > 70))
         {
             //NSLog(@"NEXT");
             lastBlinkValue = blinkStrength;
@@ -52,7 +52,7 @@
                     break;
             }
             
-            NSLog(@"%d : %@", directionValue, tempString);
+            NSLog(@"MINDWAVE %d : %@", directionValue, tempString);
         }
     }
         
@@ -110,7 +110,7 @@
          NSLog(@"STOP");
          }
          */
-        if ((eSenseValues.meditation > 75) && (!relaxing))
+        if ((eSenseValues.meditation > 70) && (!relaxing))
         {
             relaxing = TRUE;
             NSLog(@"GO");
@@ -166,11 +166,11 @@
         [[TGAccessoryManager sharedTGAccessoryManager] startStream];
     directionValue = 0;
     NSLog(@"Now Listening");
-    NSLog(@"LEFT");
+//    NSLog(@"LEFT");
     lastBlinkValue = 0;
     concentrating = FALSE;
     relaxing = FALSE;
-    NSLog(@"STOP Mode");
+//    NSLog(@"STOP Mode");
     prevSignalValue = 0;
 }
 

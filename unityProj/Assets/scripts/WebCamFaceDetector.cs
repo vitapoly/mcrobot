@@ -28,7 +28,7 @@ public class WebCamFaceDetector : MonoBehaviour {
 		RotatableGUIItem guiItem = ((RotatableGUIItem)(GameObject.Find ("CameraVideo").GetComponent("RotatableGUIItem")));
 		guiItem.texture = webCam;
 		guiItem.size = new Vector2(Screen.width / 8, Screen.height / 8);
-		guiItem.relativePosition = new Vector2(-Screen.width / 16, Screen.height / 16);
+		guiItem.relativePosition = new Vector2(-Screen.width / 16, Screen.height / 16 + 75);
 		
 		if (CoreXT.IsDevice) {
 			
@@ -58,6 +58,19 @@ public class WebCamFaceDetector : MonoBehaviour {
 			}
 		}
 	}
+	
+	const float minX = -60;
+	const float maxX = 60;
+	const float diffX = maxX - minX;
+	const float minY = 150;
+	const float maxY = 300;
+	const float diffY = maxY - minY;
+	const float minZ = 0;
+	const float maxZ = 100;
+	const float diffZ = maxZ - minZ;
+	const float minFaceWidth = 400;
+	const float maxFaceWidth = 900;
+	const float diffFaceWidth = maxFaceWidth - minFaceWidth;
 	
 	void Update() {
 		if (CoreXT.IsDevice) {
@@ -91,6 +104,18 @@ public class WebCamFaceDetector : MonoBehaviour {
 						GameObject.Find("Main Camera").GetComponent<Main>().rotateArmToLeft();
 					else
 						GameObject.Find("Main Camera").GetComponent<Main>().rotateArmToRight();
+					
+					
+					
+//					var newX = (face.Bounds.center.x / Screen.width) * diffX + minX;
+//					var newZ = (face.Bounds.center.y / Screen.height) * diffY + minY;
+//					var newY = (face.Bounds.width / diffFaceWidth) * diffFaceWidth + maxFaceWidth;
+//					GameObject.Find("Main Camera").camera.transform.position = new Vector3(newX, newY, newZ);
+//					GameObject.Find("Main Camera").GetComponent<Main>().Log("face: " + face.Bounds.center.x + ", " + face.Bounds.center.y + ", " + face.Bounds.width + ", " + face.Bounds.height
+//						+ "; " + newX + ", " + newY + ", " + newZ);
+					
+					
+					
 				}
 			}
 		}
